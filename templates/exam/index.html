@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<style>
+  .jumbotron{
+    margin-bottom: 0px;
+    /* background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(image\d.jpg;); */
+   
+  }
+  .brown{
+    color: rgb(3, 66, 66);
+  }
+  .green{
+    color: green;
+  }
+
+
+</style>
+<body style="background-image:url('{% static 'image/b.jpg' %}')";>
+  {% include "exam/navbar.html" %}
+<br>
+
+
+  <!-- <img src="{% static "image/admin-avatar.png" %}" class="profile_image" alt=""> -->
+
+
+<section id="section-jumbotron"><br><br><br>
+  <div class="container text-center">
+   <!-- <div class="logo_area">
+    <a href=""><img src="{% static 'image/kits_logo.jpg' %}" alt="" width="100px" height="100px"></a> -->
+
+    <h1 class="green"><b>KAMALA INSTITUTE OF TECHNOLOGY AND SCIENCE</h1>
+      <p><b>Approved by AICTE, New Delhi, Affiliated to JNTU, Hyderabad, T.S., 
+        Accredited by NAAC with A++ and NBA(CSE,ECE,EEE)</b></p>
+        <p><b>Singapur,Huzurabad,Karimnagar,Telangana - 505468</b></p><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  
+    <h4 class="brown"><strong> Attend your examinations online!</strong></h4>
+    <h5 class="brown"><strong> Sign Up now to start your first online examination</strong></h5>
+    <h6 class="brown"><strong> Start Your Journey Here:</strong></h6><br>
+    <a href="{% url 'adminlogin' %}" class="btn btn-lg btn-success" style="padding-right: 35px; border-radius: 0%;"><i class="fa fa-graduation-cap" aria-hidden="true"></i> login as Admin</a>
+    <a href="{% url 'teacherlogin' %}" class="btn btn-lg btn-warning" style="padding-right: 35px; border-radius: 0%;"><i class="fa fa-graduation-cap" aria-hidden="true"></i> login as Faculty</a>
+    <a href="{% url 'studentlogin' %}" class="btn btn-lg btn-dark" style="padding-right: 35px; border-radius: 0%;"><i class="fa fa-graduation-cap" aria-hidden="true"></i> login as Student</a>
+    <br><br><br>
+  </div>  
+<!-- </div> -->
+</section>
+  {% include "exam/footer.html" %}
+
+
+
+</body>
+
+</html>

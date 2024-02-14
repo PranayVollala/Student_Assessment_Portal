@@ -1,0 +1,68 @@
+{% extends 'student/studentbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+      /* Style the table header */
+      thead th {
+        background-color: #e5e7eb;
+        padding: 1rem;
+        font-weight: bold;
+        text-align: left;
+      }
+      
+      /* Style the table body */
+      tbody td {
+        padding: 1rem;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      
+      /* Style the table rows on hover */
+      tbody tr:hover {
+        background-color: #f3f4f6;
+      }
+      
+      /* Style the link in the table */
+      table a {
+        color: #10b981;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div class="container mx-auto">
+      <div class="bg-white shadow-md rounded my-6">
+        <table class="table-auto w-full">
+          <thead>
+            <tr>
+              <th class="px-4 py-2">Company ID</th>
+              <th class="px-4 py-2">Company Name</th>
+              <th class="px-4 py-2">Stipend</th>
+              <th class="px-4 py-2">Cutoff</th>
+              <th class="px-4 py-2">Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for company in companies %}
+            <tr>
+              <td class="border px-4 py-2">{{ company.company_id }}</td>
+              <td class="border px-4 py-2">{{ company.company_name }}</td>
+              <td class="border px-4 py-2">{{ company.stipend }}</td>
+              <td class="border px-4 py-2">{{ company.cutoff }}</td>
+              <td class="border px-4 py-2"><a href="{{ company.link }}">{{ company.link }}</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+  
+  <br><br><br><br><br><br>
+
+<script src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+
+{% endblock content %}
